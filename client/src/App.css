@@ -61,7 +61,7 @@ body {
 
 .header__button {
   /* BOX MODEL */
-  width: 5vw;
+  min-width: 5vw;
   height: 2.5vh;
   /* TYPOGRAPHY */
   font-size: .6rem;
@@ -70,7 +70,8 @@ body {
 .header__dropdown {
   /* BOX MODEL */
   margin-left: 1vw;
-  width: 7vw;
+  min-width: 4vw;
+  max-width: 20vw;
   height: 2.5vh;
   /* TYPOGRAPHY */
   font-size: .6rem;
@@ -93,27 +94,7 @@ body {
   font-size: .6rem;
 }
 
-.control {
-  /* BOX MODEL */
-  border: solid 2px transparent;
-  width: 100vw;
-  height: 7vh;
-  padding: 0 2vw;
-  /* LAYOUT */
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* BACKGROUND */
-  background: rgba(255, 255, 255, 0.3);
-  z-index: 1;
-  backdrop-filter: blur(5px);
-  background-clip: padding-box;
-  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
-}
 
-.control__play {
-  
-}
 
 .list__item * {
   /* TYPOGRAPHY */
@@ -177,4 +158,66 @@ body {
 .list__page {
   /* BOX MODEL */
   height: 2vh;
+}
+ 
+.player {
+  position: relative;
+  height: 14vh;
+  width: 98vw;
+  margin: 2vw;
+  align-self: center;
+}
+
+.PlayerRSWP {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+._SliderRSWP {
+  position: relative;
+  bottom: -8vh;
+}
+
+._ContentRSWP {
+  width: 100%;
+}
+
+._ContentRSWP div:first-of-type {
+  border-style: none;
+}
+
+.rswp__active {
+  display: flex;
+  position: relative;
+  top: 1vh;
+}
+
+._InfoRSWP {
+  display: flex;
+  position: relative;
+}
+
+._InfoRSWP > * {
+  position: relative;
+  font-size: 1rem;
+  align-self: center;
+  justify-self: center;
+}
+
+._InfoRSWP * {
+  font-size: 1rem;
+}
+
+._ControlsRSWP {
+  position: relative;
+  bottom: -2vh;
+}
+
+._ControlsRSWP  *{
+ margin: 1vw;
+}
+
+._ActionsRSWP * {
+  position: relative;
+  bottom: -1vh;
 }

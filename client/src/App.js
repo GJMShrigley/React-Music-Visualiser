@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
-import WebPlayback from './components/WebPlayback.jsx';
+import Player from './components/Player';
 import axios from 'axios';
 import Menu from "./components/Menu";
 import List from "./components/List";
@@ -86,19 +86,8 @@ function App() {
         Authorization: `Bearer ${spotifyToken}`
       }
     });
+    console.log(track);
     setTrack(data);
-  };
-
-  const readyPlayer = async (device_id) => {
-    const putRequest = await axios.put("https://api.spotify.com/v1/me/player/", {
-      headers: {
-        Authorization: `Bearer ${spotifyToken}`
-      },
-      data: {
-        device_id: `[${device_id}]`
-    }
-    });
-    console.log("Put request success", putRequest);
   };
 
   const searchResultList = searchResult.map((result) => {
@@ -121,11 +110,9 @@ function App() {
       searchText={handleSearchText}
       logout={logout}
      />  
-      {loggedIn && <WebPlayback 
-        // currentTrack={resultUri}
+      {loggedIn && <Player 
         token={spotifyToken}
         track={track}
-        ready={readyPlayer}
       />}
       <section className="list">
      {searchResultList}
