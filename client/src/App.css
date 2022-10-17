@@ -1,0 +1,180 @@
+* {
+  /* BOX MODEL */
+  margin: 0;
+  padding: 0;
+  /* TYPOGRAPHY */
+  font-size: 1.5rem;
+  color: #000;
+}
+
+body {
+  /* BOX MODEL */
+  width: 100vw;
+  height: 100vh;
+  /* LAYOUT */
+  display: flex;
+  /* TYPOGRAPHY */
+  font-family: sans-serif;
+  /* BACKGROUND */
+  background: url("./images/Retrowave-background.jpg") top center / cover;
+}
+
+.header {
+  /* BOX MODEL */
+  border: solid 2px transparent;
+  width: 100vw;
+  height: 7vh;
+  padding: 0 2vw;
+  /* LAYOUT */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* BACKGROUND */
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+.header__icon {
+  /* BOX MODEL */
+  width: 5vh;
+  height: 5vh;
+  /* BACKGROUND */
+  background: url("../src/icons/spotify-logo-5434.svg") top center / cover;
+}
+
+.header__search-bar {
+  /* LAYOUT */
+  display: flex;
+  align-items: center;
+}
+
+.header__input {
+  /* BOX MODEL */
+  width: 30vw;
+  height: 2vh;
+  /* TYPOGRAPHY */
+  font-size: .65rem;
+}
+
+.header__button {
+  /* BOX MODEL */
+  width: 5vw;
+  height: 2.5vh;
+  /* TYPOGRAPHY */
+  font-size: .6rem;
+}
+
+.header__dropdown {
+  /* BOX MODEL */
+  margin-left: 1vw;
+  width: 7vw;
+  height: 2.5vh;
+  /* TYPOGRAPHY */
+  font-size: .6rem;
+}
+
+.header__option {
+  /* TYPOGRAPHY */
+  font-size: .6rem;
+}
+
+.header__login {
+  /* TYPOGRAPHY */
+  color: #fff;
+}
+
+.header__logout {
+  /* BOX MODEL */
+  height: 3vh;
+  /* TYPOGRAPHY */
+  font-size: .6rem;
+}
+
+.control {
+  /* BOX MODEL */
+  border: solid 2px transparent;
+  width: 100vw;
+  height: 7vh;
+  padding: 0 2vw;
+  /* LAYOUT */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* BACKGROUND */
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+.control__play {
+  
+}
+
+.list__item * {
+  /* TYPOGRAPHY */
+  font-size: .6rem;
+  color: #fff;
+}
+
+.list__item {
+  /* BOX MODEL */
+  margin: 1vh;
+  height: 11vh;
+  /* LAYOUT */
+  display: flex;
+  /* BACKGROUND */
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  background-clip: padding-box;
+  box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+}
+
+.list__image {
+  /* BOX MODEL */
+  margin: 1vh;
+  height: 8vh;
+  width: 8vh;
+  /* LAYOUT */
+  justify-content: center;
+  align-items: center;
+  /* TYPOGRAPHY */
+  text-align: center;
+  text-justify: center;
+  /* BACKGROUND */
+  object-fit: cover;
+}
+
+.list__info {
+  /* BOX MODEL */
+  margin: 1vh;
+}
+
+.list__name {
+  /* TYPOGRAPHY */
+  font-size: 1rem;
+  text-decoration: underline;
+}
+
+.list__artists,
+.list__album,
+.list__duration,
+.list__genre,
+.list__episodes,
+.list__tracks,
+.list__owner {
+  /* BOX MODEL */
+  margin: 1vh 0;
+  /* TYPOGRAPHY */
+  font-size: .6rem;
+}
+
+.list__page {
+  /* BOX MODEL */
+  height: 2vh;
+}
