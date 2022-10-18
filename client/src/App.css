@@ -9,7 +9,7 @@
 
 body {
   /* BOX MODEL */
-  width: 100vw;
+  width: 90vw;
   height: 100vh;
   /* LAYOUT */
   display: flex;
@@ -19,10 +19,15 @@ body {
   background: url("./images/Retrowave-background.jpg") top center / cover;
 }
 
+#root {
+  width: 100vw;
+}
+
 .header {
   /* BOX MODEL */
+  margin: 1vw;
   border: solid 2px transparent;
-  width: 100vw;
+  width: 93vw;
   height: 7vh;
   padding: 0 2vw;
   /* LAYOUT */
@@ -43,6 +48,7 @@ body {
   height: 5vh;
   /* BACKGROUND */
   background: url("../src/icons/spotify-logo-5434.svg") top center / cover;
+  border-radius: 100%;
 }
 
 .header__search-bar {
@@ -54,7 +60,7 @@ body {
 .header__input {
   /* BOX MODEL */
   width: 30vw;
-  height: 2vh;
+  height: 4vh;
   /* TYPOGRAPHY */
   font-size: .65rem;
 }
@@ -62,7 +68,7 @@ body {
 .header__button {
   /* BOX MODEL */
   min-width: 5vw;
-  height: 2.5vh;
+  height: 4.4vh;
   /* TYPOGRAPHY */
   font-size: .6rem;
 }
@@ -72,7 +78,7 @@ body {
   margin-left: 1vw;
   min-width: 4vw;
   max-width: 20vw;
-  height: 2.5vh;
+  height: 4.4vh;
   /* TYPOGRAPHY */
   font-size: .6rem;
 }
@@ -89,12 +95,16 @@ body {
 
 .header__logout {
   /* BOX MODEL */
-  height: 3vh;
+  min-width: 6vw;
+  height: 4.4vh;
   /* TYPOGRAPHY */
-  font-size: .6rem;
+  font-size: .8rem;
 }
 
-
+.list {
+  height: 73vh;
+  overflow: scroll;
+}
 
 .list__item * {
   /* TYPOGRAPHY */
@@ -105,6 +115,7 @@ body {
 .list__item {
   /* BOX MODEL */
   margin: 1vh;
+  width: 97vw;
   height: 11vh;
   /* LAYOUT */
   display: flex;
@@ -114,6 +125,8 @@ body {
   backdrop-filter: blur(5px);
   background-clip: padding-box;
   box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+  /* OTHER */
+  cursor: pointer;
 }
 
 .list__image {
@@ -160,64 +173,33 @@ body {
   height: 2vh;
 }
  
-.player {
+ .player {
   position: relative;
   height: 14vh;
-  width: 98vw;
-  margin: 2vw;
+  width: 97vw;
+  margin: 2vw 2vw;
   align-self: center;
 }
 
 .PlayerRSWP {
-  height: 100%;
-  box-sizing: border-box;
-}
-
-._SliderRSWP {
-  position: relative;
-  bottom: -8vh;
-}
-
-._ContentRSWP {
-  width: 100%;
-}
-
-._ContentRSWP div:first-of-type {
-  border-style: none;
-}
-
-.rswp__active {
-  display: flex;
-  position: relative;
-  top: 1vh;
-}
-
-._InfoRSWP {
-  display: flex;
-  position: relative;
-}
-
-._InfoRSWP > * {
-  position: relative;
-  font-size: 1rem;
-  align-self: center;
-  justify-self: center;
+width: 100vw;
 }
 
 ._InfoRSWP * {
-  font-size: 1rem;
+  font-size: .7rem;
 }
 
-._ControlsRSWP {
-  position: relative;
-  bottom: -2vh;
-}
+@media (min-width: 1000px)  {
+  .player {
+    width: 95vw;
+  }
 
-._ControlsRSWP  *{
- margin: 1vw;
-}
+  .PlayerRSWP {
+    height: 15vh;
+  }
 
-._ActionsRSWP * {
-  position: relative;
-  bottom: -1vh;
+  ._ContentRSWP {
+    position: relative;
+    top: 4vh;
+  }
 }

@@ -22,8 +22,6 @@ function App() {
   const [searchText, setSearchText] = useState("");
   const [searchType, setSearchType] = useState("artist");
   const [searchResult, setSearchResult] = useState([]);
-  // const [resultUri, setResultUri] = useState("");
-  // const [resultType, setResultType] = useState("");
   const [track, setTrack] = useState({});
 
   useEffect(() => {
@@ -74,8 +72,6 @@ function App() {
 
   const getData = (e) => {
     const result = e.split(":");
-    // setResultType(result[1]);
-    // setResultUri(result[2]);
     getTrack(result[1], result[2]);
   };
 
@@ -86,7 +82,6 @@ function App() {
         Authorization: `Bearer ${spotifyToken}`
       }
     });
-    console.log(track);
     setTrack(data);
   };
 
@@ -102,7 +97,7 @@ function App() {
 
   return (
     <div className="App">
-      {!loggedIn && <a href="http://localhost:8888/">Login to Spotify</a>}
+      {!loggedIn}
       <Menu 
       search={searchFor}
       searchType={handleSearchType}
@@ -110,9 +105,10 @@ function App() {
       searchText={handleSearchText}
       logout={logout}
      />  
-      {loggedIn && <Player 
+      {loggedIn && track.uri && <Player 
         token={spotifyToken}
         track={track}
+        autoPlay={true}
       />}
       <section className="list">
      {searchResultList}

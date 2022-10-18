@@ -4,8 +4,16 @@
     <title>Example of the Authorization Code flow with Spotify</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style type="text/css">
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
       #login, #loggedin {
-        display: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .text-overflow {
         overflow: hidden;
@@ -13,13 +21,19 @@
         white-space: nowrap;
         width: 500px;
       }
+      .btn {
+        position: relative;
+        align-self: center;
+        height: 5vh;
+        width: 25vh;
+        font-size: 2rem;
+      }
     </style>
   </head>
 
   <body>
     <div class="container">
       <div id="login">
-        <h1>This is an example of the Authorization Code flow</h1>
         <a href="/login" class="btn btn-primary">Log in with Spotify</a>
       </div>
       <div id="loggedin">
