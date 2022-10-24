@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import SpotifyPlayer from 'react-spotify-web-playback';
 import '../App.css';
 

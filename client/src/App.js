@@ -27,7 +27,6 @@ function App() {
   useEffect(() => {
     const hash = window.location.hash;
     let spotifyToken = window.localStorage.getItem("token");
-    
 
     if (!spotifyToken && hash) { 
       spotifyToken = getTokenFromUrl().access_token;
@@ -110,9 +109,9 @@ function App() {
         track={track}
         autoPlay={true}
       />}
-      <section className="list">
+      {loggedIn && <section className="list">
      {searchResultList}
-     </section>
+     </section>}
     </div>
   );
 }
