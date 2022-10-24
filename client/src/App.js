@@ -105,7 +105,7 @@ function App() {
       searchText={handleSearchText}
       logout={logout}
      />  
-      {loggedIn && track.uri && <Player 
+      {loggedIn && <Player 
         token={spotifyToken}
         track={track}
         autoPlay={true}

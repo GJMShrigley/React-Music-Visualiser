@@ -5,6 +5,28 @@
   /* TYPOGRAPHY */
   font-size: 1.5rem;
   color: #000;
+  /* OTHER */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.5) rgba(255, 255, 255, 0.3);
+}
+
+*::-webkit-scrollbar {
+  /* BOX MODEL */
+  width: 25px;
+}
+
+*::-webkit-scrollbar-track {
+  /* BOX MODEL */
+  border-radius: 20px;
+  /* BACKGROUND */
+  background: rgba(255, 255, 255, 0.5);
+}
+
+*::-webkit-scrollbar-thumb {
+  /* BOX MODEL */
+  border-radius: 20px;
+  /* BACKGROUND */
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 body {
@@ -16,7 +38,7 @@ body {
   /* TYPOGRAPHY */
   font-family: sans-serif;
   /* BACKGROUND */
-  background: url("./images/Retrowave-background.jpg") top center / cover;
+  background: url("./images/Hexagons.png") top center / cover;
 }
 
 #root {
@@ -102,8 +124,8 @@ body {
 }
 
 .list {
-  height: 73vh;
-  overflow: scroll;
+  height: 70vh;
+  overflow: auto;
 }
 
 .list__item * {
@@ -115,7 +137,7 @@ body {
 .list__item {
   /* BOX MODEL */
   margin: 1vh;
-  width: 97vw;
+  width: 96vw;
   height: 11vh;
   /* LAYOUT */
   display: flex;
