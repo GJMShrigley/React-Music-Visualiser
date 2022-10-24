@@ -14,7 +14,7 @@ var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
 var client_id = 'bdb968cda5f04c048507ade3db3f4f98'; // Your client id
-var client_secret = ''; // Your secret
+var client_secret = 'b674d2f3c007486f87d3793350e0161d'; // Your secret
 var redirect_uri = 'http://localhost:8888/callback'; // Your redirect uri
 
 /**
