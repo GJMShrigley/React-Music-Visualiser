@@ -17,9 +17,9 @@ const getTokenFromUrl = () => {
 };
 
 function App() {
-  const client_id = "415df4ec9c4141a49a72b4b1928211db";
+  const client_id = "bdb968cda5f04c048507ade3db3f4f98";
   // const client_secret = "b674d2f3c007486f87d3793350e0161d";
-  const redirect_uri = "http://localhost:3000";
+  const redirect_uri = "https://react-spotify-search-and-player.netlify.app/";
   const auth_endpoint = "https://accounts.spotify.com/authorize";
   const response_type = "token";
   const scope = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming';
