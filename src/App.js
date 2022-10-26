@@ -17,6 +17,13 @@ const getTokenFromUrl = () => {
 };
 
 function App() {
+  const client_id = "415df4ec9c4141a49a72b4b1928211db";
+  const client_secret = "b674d2f3c007486f87d3793350e0161d";
+  const redirect_uri = "http://localhost:3000";
+  const auth_endpoint = "https://accounts.spotify.com/authorize";
+  const response_type = "token";
+  const scope = 'user-read-private user-read-email user-read-playback-state user-modify-playback-state streaming';
+  
   const [spotifyToken, setSpotifyToken] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
   const [searchText, setSearchText] = useState("");
@@ -103,6 +110,11 @@ function App() {
       token={spotifyToken}
       searchText={handleSearchText}
       logout={logout}
+      id = {client_id}
+      endpoint = {auth_endpoint}
+      redirect = {redirect_uri}
+      responseType = {response_type}
+      scope = {scope}
      />  
       {loggedIn && <Player 
         token={spotifyToken}

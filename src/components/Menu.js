@@ -19,7 +19,7 @@ export default function Menu(props) {
           </form>
         } 
 
-        {!props.token ? <a className="header__login" href="http://localhost:8888/">Login</a> 
+        {!props.token ? <a className="header__login" href={`${props.endpoint}?client_id=${props.id}&redirect_uri=${props.redirect}&response_type=${props.responseType}&scope=${props.scope}`}>Login</a> 
         : 
         <button className="header__logout" onClick={props.logout}>Logout</button>
         }
