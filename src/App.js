@@ -18,7 +18,7 @@ const getTokenFromUrl = () => {
 
 function App() {
   const client_id = "415df4ec9c4141a49a72b4b1928211db";
-  const client_secret = "b674d2f3c007486f87d3793350e0161d";
+  // const client_secret = "b674d2f3c007486f87d3793350e0161d";
   const redirect_uri = "http://localhost:3000";
   const auth_endpoint = "https://accounts.spotify.com/authorize";
   const response_type = "token";
