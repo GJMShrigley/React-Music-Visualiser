@@ -36,13 +36,15 @@ Simply clicking on one of the displayed results in the list section will load th
 
 This project was designed for the purposes of teaching myself how to make use of RESTful APIs. I initially chose Spotify's API due to the thorough documentation available. This choice came with a number of challenges, such as Spotify's recent decision to limit the 'streaming' scope to premium accounts on third party applications.
 
+### Authorizing:
+
 The first step in creating a working application was to gain authorization for the user. 
 
 At the top level of the application, a series of variables contain important information necessary for Spotify's API to authorize the user. These are the 'client_id', which identifies the application, the 'redirect_uri' which specifies the page to return to once authorization has taken place, the 'auth_endpoint' which specifies where the application should direct the browser for authorization, the 'response_type' which specifies the response expected, and the 'scope' which specifies what privileges the application is requesting access to.
 
 The above variables are passed as props to the Menu component. This component checks for the presence of the 'token' prop. As the 'token' prop is only set after authorization it will not initially be present and the Menu component will render a 'login' element. 
 
-When clicked, the 'login' element will combine the data from the props into a url and query string used to pass the relevant information to the Spotify auhorization page where the user can enter their login details and allow the application access to their account. Once completed, the browswer will redirect them back to the application page.
+When clicked, the 'login' element will combine the data from the props into a url and query string used to pass the relevant information to the Spotify authorization page where the user can enter their login details and allow the application access to their account. Once completed, the browswer will redirect them back to the application page.
 
 React's useEffect hook allows for code contained in the first argument to be run only upon certain conditions being met. Specifically, code contained within the first argument will run only when changes occur to specified dependencies. These dependencies are contained in an array included as a second argument. As the dependencies array of this useEffect hook is empty, it will only run once (when the log in is first made.)
 
@@ -52,11 +54,27 @@ If the app finds that the url contains a hash, but there is no spotifyToken pres
 
 The spotifyToken is then passed to the 'spotify-web-api-js' library and used to fetch the user's data. Once this step is complete the useEffect hook will update the 'spotifyToken' and 'loggedIn' states. As stated before, since the dependencies array is empty, this useEffect hook will only run once.
 
-With the user authorized and the 'loggedIn' state set to True, the application will now display the Menu and Player components as well as a list section to be populated by the results of a search. 
+### Searching:
 
+With the user authorized and the 'loggedIn' state set to True, the Menu component will check for a token. If one is found the header will now display the Menu and Player components as well as a list section to be populated by the results of a search. The Menu contains a text field, button and dropdown menu that point back to a set of search functions located in App.js. This method is intended to keep all data in a central location where it can then be passed to whichever component requires it. In this way the application ensures that there will be no conflict between different data sources and reduce the likelihood of bugs occuring.
 
+These search functions first set a pair of states (searchText and searchType) in App.js to manage the type of search (track, artist, album, playlist, podcast etc), and the text of the search (entered into the Menu's text field). A third search function combines the data from these two states (along with the token generated at login) into an asynchronous Axios call to Spotify's API. The response from the API is then set as another state (searchResult) to be used in populating the List component.
+
+Spotify's API returns an array of 20 objects as a response. Each of these objects contains a number of properties detailing the track (or playlist, album, etc) name, its corresponding artist, genre, duration, links to art, etc. Using the map array method it is possible to create a new List element for each object in the array and pass them the object's data as props.
+
+### Displaying:
+
+The List component takes the data passed as props and generates a series of elements to display the relevant information using a switch statement that checks against the type of result (track, playlist, album, etc) as each one contains different properties. These are then combined for the return statement, resulting in an element that displays as part of the result list. Each of these elements also contains an 'onClick' event which activates a 'handleClick' function. This function passes the URI of the clicked element back to App.js where it is used to select a track to play.
+
+### Playing:
+
+In App.js the 'getData' function splits the URI returned from the List element into a 'type' and a 'uri' These are both passed to the 'getTrack' asynchronous function which performs another Axios call to the Spotify API. The response is then set in a state and passed to the Player component to be played.
+
+In the final stage of operation, the Player component takes the track uri and token and passes them to a pre-built library 'react-spotify-web-playback' which handles the playback of the track. For more information on the 'react-spotify-web-playback' library, please refer to the link below.
 
 ## CREDITS:
 
-## LINKS:
+Spotify Web API courtesy of JMPerez: (https://github.com/JMPerez/spotify-web-api-js)
+
+React Spotify Web Playback library courtesy of gilbarbara: (https://github.com/gilbarbara/react-spotify-web-playback)
 
