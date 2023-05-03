@@ -6,7 +6,7 @@ NOTICE: This application requires a Spotify Premium account to access streaming 
 
 ## HOW TO USE:
 
-In order to deploy your own isntance of this application, you'll first need to sign up to 'Spotify for Developers' (https://developer.spotify.com/.) 
+In order to deploy your own instance of this application, you'll first need to sign up to 'Spotify for Developers' (https://developer.spotify.com/.) 
 
 Once you've created an account, in the 'Dashboard' section (https://developer.spotify.com/dashboard/applications), select 'Create an app' and fill out the name and description of your new application.
 
