@@ -78,3 +78,6 @@ Spotify Web API courtesy of JMPerez: (https://github.com/JMPerez/spotify-web-api
 
 React Spotify Web Playback library courtesy of gilbarbara: (https://github.com/gilbarbara/react-spotify-web-playback)
 
+## LINKS:
+
+For a live example, please visit my online portfolio (https://gs-spotifyplayer.netlify.app/)
